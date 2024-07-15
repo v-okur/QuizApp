@@ -40,25 +40,25 @@ onMounted(async () => {
 
 <template>
   <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-screen-sm p-4">
+    <div class="w-full max-w-screen-sm p-4 min-h-screen">
       <div class="header flex justify-between items-center">
         <h1 class="text-4xl font-bold text-gray-800">Quiz App</h1>
         <input
           v-model="search"
-          class="bg-white shadow-md pl-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
+          class="bg-white h-12 shadow-md pl-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-800"
           type="text"
           placeholder="Search..."
         />
       </div>
-      <hr class="my-2 border-gray-200" />
+      <hr class="my-6 h-1 bg-gray-800" />
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
         <div
           v-for="category in filteredCategories"
           :key="category.name"
-          class="cursor-pointer hover:scale-105 bg-white rounded-md shadow-md border border-gray-200 overflow-hidden"
+          class="cursor-pointer hover:scale-110 bg-white rounded-md shadow-md border border-gray-200 overflow-hidden"
         >
-          <img :src="category.img" alt="" class="w-full h-fit object-scale-down" />
-          <div class="p-4">
+          <img :src="category.img" alt="" class="w-full h-auto max-h-40 object-cover" />
+          <div class="p-4 text-center">
             <h2 class="text-xl font-bold text-gray-800">{{ category.name }}</h2>
           </div>
         </div>
@@ -80,31 +80,3 @@ onMounted(async () => {
   }
 }
 </style>
-<!-- <template>
-  <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-    <div class="w-full max-w-screen-sm p-4">
-      <div class="header flex justify-between items-center">
-        <h1 class="text-4xl font-bold text-gray-800">Quiz App</h1>
-        <input
-          v-model="search"
-          class="bg-white shadow-md pl-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-300"
-          type="text"
-          placeholder="Search..."
-        />
-      </div>
-      <hr class="my-2 border-gray-200" />
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-        <div
-          v-for="category in filteredCategories"
-          :key="category.name"
-          class="cursor-pointer hover:scale-105 bg-white rounded-md shadow-md border border-gray-200 overflow-hidden"
-        >
-          <img :src="category.img" alt="" class="w-full h-32 object-cover" />
-          <div class="p-4">
-            <h2 class="text-xl font-bold text-gray-800">{{ category.name }}</h2>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</template> -->
