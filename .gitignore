@@ -1,0 +1,13 @@
+
+src/assets
+.prettierrc.json
+jsconfig.json
+postcss.config.js
+tailwind.config.js
+vite.config.js
+
+node_modules
+
+dist
+
+.vscode/
