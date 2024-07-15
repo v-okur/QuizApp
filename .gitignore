@@ -1,6 +1,8 @@
 
 src/assets
 .prettierrc.json
+.eslintrc.cjs
+public/favicon.ico
 jsconfig.json
 postcss.config.js
 tailwind.config.js
