@@ -99,7 +99,7 @@ onMounted(async () => {
         <h1 class="text-xl md:text-4xl">{{ questionCount }}/5</h1>
       </div>
       <div class="w-full h-3/5 border-2 border-teal-950 rounded-xl box-border p-5 flex flex-col">
-        <h1 class="mb-4">{{ question.question }}</h1>
+        <h1 class="">{{ question.question }}</h1>
       </div>
       <div class="mt-3 grid grid-cols-2 md:grid-cols-4 gap-4 w-full px-6">
         <button
@@ -108,10 +108,11 @@ onMounted(async () => {
           :disabled="isAnswered"
           :class="{
             'text-white bg-blue-700 hover:bg-blue-800': !selectedAnswer,
-            'text-white bg-green-500': selectedAnswer === answer && answer === correctAnswer,
-            'text-white bg-red-500': selectedAnswer === answer && answer !== correctAnswer
+            'text-white bg-yellow-500': selectedAnswer === answer,
+            'text-white bg-green-500': selectedAnswer && answer === correctAnswer,
+            'text-white bg-red-500': selectedAnswer && answer !== correctAnswer
           }"
-          class="min-h-14 md:font-medium rounded-lg text-xs md:text-sm me-2 mb-2 p-2 animate-slide-in-bottom"
+          class="min-h-14 md:font-medium rounded-lg text-xs md:text-sm me-2 w-full h-full mb-2 p-2 animate-slide-in-bottom"
           @click="selectAnswer(answer)"
         >
           {{ answer }}
