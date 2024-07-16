@@ -120,7 +120,9 @@ onMounted(async () => {
     </div>
     <div v-else class="flex flex-col items-center justify-center h-full mt-6">
       <h1 class="text-2xl font-comfortaa">Correct answers: {{ correctQuestions }}</h1>
-      <button @click="restart">Restart</button>
+      <button class="border-2 p-2 rounded-xl bg-slate-50 border-slate-950 mt-4" @click="restart">
+        Restart
+      </button>
     </div>
   </div>
 </template>
