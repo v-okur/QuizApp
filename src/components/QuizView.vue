@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { onBeforeMount, ref } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 import { shuffle } from '../helpers/shuffle'
 import { fetchQuestions } from '../helpers/fetchQuestions'
@@ -66,14 +66,15 @@ const restart = async () => {
   getNewQuestion()
 }
 
-onMounted(async () => {
+onBeforeMount(async () => {
+  console.log('mounted')
   restart()
 })
 </script>
 
 <template>
-  <RouterLink to="/">
-    <h1 class="font-comfortaa underline text-xl ml-5 mt-5">Home</h1>
+  <RouterLink class="inline-block m-5" to="/">
+    <h1 class="font-comfortaa underline text-xl">Home</h1>
   </RouterLink>
   <div
     v-if="loading"
@@ -115,7 +116,7 @@ onMounted(async () => {
             'text-white bg-green-500': selectedAnswer && answer === correctAnswer,
             'text-white bg-red-500': selectedAnswer && answer !== correctAnswer
           }"
-          class="min-h-14 md:font-medium rounded-lg text-xs md:text-sm me-2 w-full h-full mb-2 p-2 animate-slide-in-bottom"
+          class="min-h-14 md:font-medium transition-transform ease-in-out rounded-lg text-xs md:text-sm me-2 w-full h-full mb-2 p-2 animate-slide-in-bottom"
           @click="selectAnswer(answer)"
         >
           {{ answer }}

@@ -9,11 +9,11 @@ export const fetchQuestions = async (categoryName) => {
   while (attempts < maxAttempts) {
     try {
       const response = await fetch(
-        `https://opentdb.com/api.php?amount=50&category=${getCategoryId(categoryName)}&type=multiple`
+        `https://opentdb.com/api.php?amount=40&category=${getCategoryId(categoryName)}&type=multiple`
       )
 
       const data = await response.json()
-
+      console.log(data)
       if (response.ok && data.response_code !== 5) {
         return data.results.map((result) => ({
           question: decode(result.question),

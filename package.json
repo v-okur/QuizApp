@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
     "preview": "vite preview",
+    "build": "vite build && npm run postbuild",
+    "postbuild": "copy src\\404.html dist\\404.html",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "deploy": "vite build && gh-pages -d dist"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "firebase": "^10.12.3",
     "html-entities": "^2.5.2",
+    "mongodb": "^6.8.0",
     "vue": "^3.4.29",
     "vue-router": "^4.4.0"
   },

@@ -23,7 +23,7 @@ const filteredCategories = computed(() => {
 <template>
   <div class="font-comfortaa flex flex-col items-center">
     <div class="w-full md:max-w-screen-sm p-4 mt-0 min-h-screen">
-      <div class="header flex justify-between items-end mt-4">
+      <div class="header flex justify-between items-end my-6">
         <h1 class="text-4xl font-bold text-gray-800">Quiz App</h1>
         <input
           v-model="search"
